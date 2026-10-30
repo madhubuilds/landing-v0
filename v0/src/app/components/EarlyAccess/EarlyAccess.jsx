@@ -2,7 +2,7 @@ import { useState } from "react";
 import { ArrowRight, CheckCircle2, Mail } from "lucide-react";
 import { useAppStore } from "../../store/useAppStore";
 
-const API_URL = "http://localhost:5000/api/early-access";
+const API_URL = "https://whats-today-api.onrender.com/api/early-access";
 
 export default function EarlyAccess() {
   const theme = useAppStore((state) => state.theme);

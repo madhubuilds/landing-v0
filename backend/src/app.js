@@ -4,14 +4,19 @@ const earlyAccessRoutes = require("./modules/earlyAccess/earlyAccess.routes.js")
 
 const app = express();
 
-// Allow requests from the local frontend
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://landing-v0-psi.vercel.app",
+];
+
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: allowedOrigins,
     methods: ["GET", "POST", "OPTIONS"],
     allowedHeaders: ["Content-Type"],
   }),
 );
+
 // Parse incoming JSON requests
 app.use(express.json());
 
