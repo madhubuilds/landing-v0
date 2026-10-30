@@ -1,0 +1,1 @@
+export const BRAND_NAME=`what's today?`

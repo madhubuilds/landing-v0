@@ -1,0 +1,24 @@
+/* Hide/Show Basics (Mobile First) */
+.d-none { display: none !important; }
+.d-block { display: block !important; }
+.d-inline-block { display: inline-block !important; }
+
+/* Tablets (768px and up) */
+@media (min-width: 768px) {
+  .d-md-none { display: none !important; }
+  .d-md-block { display: block !important; }
+  .d-md-flex { display: flex !important; }
+  
+  .grid-md-cols-2 { grid-template-columns: repeat(2, 1fr); }
+  .grid-md-cols-3 { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Desktops (1024px and up) */
+@media (min-width: 1024px) {
+  .d-lg-none { display: none !important; }
+  .d-lg-block { display: block !important; }
+  .d-lg-flex { display: flex !important; }
+
+  .grid-lg-cols-3 { grid-template-columns: repeat(3, 1fr); }
+  .grid-lg-cols-4 { grid-template-columns: repeat(4, 1fr); }
+}

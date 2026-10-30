@@ -1,0 +1,136 @@
+/* =========================================
+   TYPOGRAPHY
+   ========================================= */
+:root {
+  /* 1. The Base Unit */
+  --text-base: 1rem; /* 16px by default */
+
+  /* 2. Calculated Standard Scale (For paragraphs and UI text) */
+  --text-xs: calc(var(--text-base) * 0.75); /* 12px */
+  --text-sm: calc(var(--text-base) * 0.875); /* 14px */
+  --text-md: calc(var(--text-base) * 1.25); /* 20px */
+  --text-lg: calc(var(--text-base) * 1.5); /* 24px */
+
+  /* 3. FLUID TYPOGRAPHY FOR HEADINGS (The Magic) */
+  /* Syntax: clamp(minimum_size, preferred_viewport_calculation, maximum_size) */
+
+  /* H3: Scales between 24px and 40px */
+  --text-h3: clamp(1.5rem, 3vw + 1rem, 2.5rem);
+
+  /* H2: Scales between 32px and 64px */
+  --text-h2: clamp(2rem, 5vw + 1rem, 4rem);
+
+  /* H1: Massive Hero Text - Scales between 40px (mobile) and 112px (desktop 4K) */
+  --text-h1: clamp(2.5rem, 8vw + 1rem, 7rem);
+}
+
+/* =========================================
+   APPLYING THE VARIABLES
+   ========================================= */
+.text-xs {
+  font-size: var(--text-xs);
+}
+.text-sm {
+  font-size: var(--text-sm);
+}
+.text-base {
+  font-size: var(--text-base);
+}
+.text-md {
+  font-size: var(--text-md);
+}
+.text-lg {
+  font-size: var(--text-lg);
+}
+
+/* Fluid Headings */
+.text-h3 {
+  font-size: var(--text-h3);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+.text-h2 {
+  font-size: var(--text-h2);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+.text-h1 {
+  font-size: var(--text-h1);
+  line-height: 1;
+  letter-spacing: -0.06em;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+/* Font Weights */
+.fw-normal {
+  font-weight: 400;
+}
+.fw-bold {
+  font-weight: 700;
+}
+.fw-black {
+  font-weight: 900;
+}
+
+/* 4px-Scaled Typography */
+/* .text-1 {
+  font-size: 12px;
+}
+.text-2 {
+  font-size: 16px;
+}  
+.text-3 {
+  font-size: 20px;
+}
+.text-4 {
+  font-size: 24px;
+}
+.text-5 {
+  font-size: 32px;
+}
+.text-6 {
+  font-size: 40px;
+}
+.text-7 {
+  font-size: 48px;
+}
+.text-8 {
+  font-size: 64px;
+}
+.text-9 {
+  font-size: 80px;
+}
+.text-10 {
+  font-size: 96px;
+}  */
+
+/* Massive Hero Text */
+
+/* Adjustments */
+.text-uppercase {
+  text-transform: uppercase;
+}
+.tracking-tight {
+  letter-spacing: -0.05em;
+} /* Crucial for blocky headers */
+.tracking-tighter {
+  letter-spacing: -0.08em;
+}
+.leading-none {
+  line-height: 1;
+}
+.leading-tight {
+  line-height: 1.1;
+}
+
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}

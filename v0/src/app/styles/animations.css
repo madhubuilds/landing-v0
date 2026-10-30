@@ -1,0 +1,42 @@
+/* =========================================
+   ANIMATIONS
+   ========================================= */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.anim-spin {
+  animation: spin 4s linear infinite;
+}
+.anim-wiggle {
+  animation: wiggle 1s ease-in-out infinite;
+}
+.anim-marquee {
+  animation: marquee 15s linear infinite;
+  display: inline-block;
+  white-space: nowrap;
+}

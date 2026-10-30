@@ -1,0 +1,36 @@
+:root {
+  /* Core Palette */
+  --color-bg: #fcfbf7;
+  --color-surface: #ffffff;
+  --color-ink: #080808;
+
+  /* Expanded Neubrutalist Brand Colors */
+  --color-orange: #ff5a1f;
+  --color-yellow: #ffe600;
+  --color-navy: #17233f;
+  --color-pink: #ff3366; /* New: Hot Pink */
+  --color-lime: #00ff66; /* New: Electric Lime */
+  --color-cyan: #00ffff; /* New: Bright Cyan */
+  --color-violet: #8a2be2; /* New: Deep Violet */
+
+  /* Define the master base unit */
+  --base-unit: 4px;
+
+  /* Calculate the entire scale dynamically */
+  --sp-1: var(--base-unit);
+  --sp-2: calc(var(--base-unit) * 2); /* 8px */
+  --sp-3: calc(var(--base-unit) * 3); /* 12px */
+  --sp-4: calc(var(--base-unit) * 4); /* 16px */
+  --sp-5: calc(var(--base-unit) * 5); /* 20px */
+  --sp-6: calc(var(--base-unit) * 6); /* 24px */
+  --sp-8: calc(var(--base-unit) * 8); /* 32px */
+
+  /* You can do the same for border widths */
+  --bw-base: 2px;
+  --bw-1: var(--bw-base);
+  --bw-2: calc(var(--bw-base) * 2); /* 4px */
+  --bw-3: calc(var(--bw-base) * 4); /* 8px */ 
+
+  /* Shadow Setup (Defaults to Ink) */
+  --shadow-color: var(--color-ink);
+}

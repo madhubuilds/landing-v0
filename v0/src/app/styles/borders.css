@@ -1,0 +1,23 @@
+/* Border Widths (All sides) */
+.border-0 { border: none; }
+.border-1 { border: var(--bw-1) solid var(--color-ink); } /* 2px */
+.border-2 { border: var(--bw-2) solid var(--color-ink); } /* 4px */
+.border-3 { border: var(--bw-3) solid var(--color-ink); } /* 8px */
+.border-4 { border: var(--bw-4) solid var(--color-ink); } /* 12px */
+.border-5 { border: var(--bw-5) solid var(--color-ink); } /* 16px */
+
+/* Border Colors (Overrides the default ink color) */
+.border-c-orange { border-color: var(--color-orange); }
+.border-c-yellow { border-color: var(--color-yellow); }
+.border-c-navy { border-color: var(--color-navy); }
+.border-c-pink { border-color: var(--color-pink); }
+.border-c-lime { border-color: var(--color-lime); }
+.border-c-cyan { border-color: var(--color-cyan); }
+
+/* Border Radius (4px scale) */
+.rounded-0 { border-radius: 0; }
+.rounded-1 { border-radius: 4px; }
+.rounded-2 { border-radius: 8px; }
+.rounded-3 { border-radius: 12px; }
+.rounded-4 { border-radius: 16px; }
+.rounded-full { border-radius: 9999px; }

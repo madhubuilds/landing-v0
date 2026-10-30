@@ -1,0 +1,14 @@
+/* Shadow Sizes (using the spacing scale for offsets) */
+.shadow-none { box-shadow: none; }
+.shadow-1 { box-shadow: var(--sp-1) var(--sp-1) 0px 0px var(--shadow-color); } /* 4px */
+.shadow-2 { box-shadow: var(--sp-2) var(--sp-2) 0px 0px var(--shadow-color); } /* 8px */
+.shadow-3 { box-shadow: var(--sp-3) var(--sp-3) 0px 0px var(--shadow-color); } /* 12px */
+.shadow-4 { box-shadow: var(--sp-4) var(--sp-4) 0px 0px var(--shadow-color); } /* 16px */
+
+/* Shadow Colors (Modifiers) */
+.shadow-orange { --shadow-color: var(--color-orange); }
+.shadow-yellow { --shadow-color: var(--color-yellow); }
+.shadow-navy { --shadow-color: var(--color-navy); }
+.shadow-pink { --shadow-color: var(--color-pink); }
+.shadow-lime { --shadow-color: var(--color-lime); }
+.shadow-cyan { --shadow-color: var(--color-cyan); }

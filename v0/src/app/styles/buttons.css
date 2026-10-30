@@ -1,0 +1,43 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-3) var(--sp-6);
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  text-transform: uppercase;
+  border: var(--bw-2) solid var(--color-ink);
+  background-color: var(--color-surface);
+  color: var(--color-ink);
+  cursor: pointer;
+  /* Defaults to an 8px shadow */
+  box-shadow: var(--sp-1) var(--sp-1) 0px 0px var(--shadow-color);
+  transition:
+    transform 0.1s ease,
+    box-shadow 0.1s ease;
+}
+
+/* Brutalist Click Action */
+.btn:active {
+  transform: translate(var(--sp-2), var(--sp-2));
+  box-shadow: 0px 0px 0px 0px var(--shadow-color);
+}
+
+/* Variants */
+.btn-orange {
+  background-color: var(--color-orange);
+}
+.btn-yellow {
+  background-color: var(--color-yellow);
+}
+.btn-navy {
+  background-color: var(--color-navy);
+  color: var(--color-surface);
+}
+.btn-pink {
+  background-color: var(--color-pink);
+}
+.btn-lime {
+  background-color: var(--color-lime);
+}
