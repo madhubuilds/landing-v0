@@ -1,16 +1,16 @@
-# React + Vite
+# What's Today? | Local Discovery Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A mobile-first, early-stage local discovery web application helping users find places, activities, underground gigs, and local happenings in their city. Features a custom Neubrutalist UI and an interactive 3D spatial profile teaser.
 
-Currently, two official plugins are available:
+## ?? Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* **Frontend Framework:** React 18 + Vite
+* **Styling:** Tailwind CSS + Custom CSS (Neubrutalism aesthetic)
+* **Routing:** React Router v6
+* **State Management:** Zustand (for Dark/Light theme and selected activities)
+* **Animations:** Framer Motion
+* **3D Rendering:** React Three Fiber (R3F) + Drei + Three.js
+* **Icons:** Lucide React
+* **Hosting:** Vercel
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ?? Project Structure 
