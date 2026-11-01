@@ -1,4 +1,4 @@
-
+import { Link } from "react-router-dom";
 import {
   MapPin,
   House,
@@ -7,18 +7,20 @@ import {
   ArrowUpRight,
   Sun,
   Moon,
+  PlusCircle,
 } from "lucide-react";
 import { useAppStore } from "../../store/useAppStore";
 
 const navLinks = [
-  { label: "Our Vision", href: "#vision" },
-  { label: "Contact", href: "#contact" },
+  { label: "Discover", path: "/discover" },
+  { label: "Host", path: "/host" },
+  { label: "Our Vision", path: "/vision" },
 ];
 
 const mobileLinks = [
-  { label: "Home", href: "#home", Icon: House },
-  { label: "Discover", href: "#discover", Icon: Compass },
-  { label: "Vision", href: "#vision", Icon: Lightbulb },
+  { label: "Home", path: "/", Icon: House },
+  { label: "Discover", path: "/discover", Icon: Compass },
+  { label: "Host", path: "/host", Icon: PlusCircle },
 ];
 
 export default function Navbar() {
@@ -48,8 +50,8 @@ export default function Navbar() {
           className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:h-20 sm:px-6 lg:px-8"
         >
           {/* Brand */}
-          <a
-            href="#home"
+          <Link
+            to="/"
             aria-label="What's Today? Home"
             className="group flex min-w-0 items-center gap-2.5"
           >
@@ -77,20 +79,20 @@ export default function Navbar() {
                 WHAT'S TODAY<span className="text-teal-500">?</span>
               </span>
             </span>
-          </a>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden items-center gap-4 md:flex lg:gap-7">
             {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
+              <Link
+                key={link.path}
+                to={link.path}
                 className={`text-sm font-bold transition-colors hover:text-teal-500 ${
                   isDark ? "text-slate-300" : "text-slate-700"
                 }`}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
 
             {/* Theme Toggle */}
@@ -112,13 +114,13 @@ export default function Navbar() {
               </span>
             </button>
 
-            <a
-              href="#early-access"
+            <Link
+              to="/"
               className="inline-flex items-center gap-2 rounded-md border-2 border-black bg-[#FFE45C] px-4 py-2.5 text-sm font-extrabold text-black shadow-[4px_4px_0px_0px_#000] transition-all duration-150 hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-[3px_3px_0px_0px_#000] active:translate-x-1 active:translate-y-1 active:shadow-none lg:px-5"
             >
               Get Early Access
               <ArrowUpRight className="h-4 w-4" />
-            </a>
+            </Link>
           </div>
 
           {/* Mobile Controls */}
@@ -138,12 +140,12 @@ export default function Navbar() {
               )}
             </button>
 
-            <a
-              href="#early-access"
+            <Link
+              to="/"
               className="rounded-md border-2 border-black bg-[#FFE45C] px-3 py-2 text-xs font-extrabold text-black shadow-[3px_3px_0px_0px_#000] transition-transform active:translate-x-0.5 active:translate-y-0.5 active:shadow-none sm:px-4 sm:text-sm"
             >
               Join Us
-            </a>
+            </Link>
           </div>
         </nav>
       </header>
@@ -158,10 +160,10 @@ export default function Navbar() {
         }`}
       >
         <div className="mx-auto grid h-[66px] max-w-lg grid-cols-4 items-center px-2">
-          {mobileLinks.map(({ label, href, Icon }) => (
-            <a
-              key={href}
-              href={href}
+          {mobileLinks.map(({ label, path, Icon }) => (
+            <Link
+              key={path}
+              to={path}
               className={`flex h-full flex-col items-center justify-center gap-1 transition-colors hover:text-teal-500 ${
                 isDark ? "text-slate-300" : "text-slate-600"
               }`}
@@ -170,16 +172,16 @@ export default function Navbar() {
               <span className="text-[10px] font-extrabold">
                 {label}
               </span>
-            </a>
+            </Link>
           ))}
 
-          <a
-            href="#early-access"
+          <Link
+            to="/"
             className="mx-auto flex h-11 w-full max-w-[76px] flex-col items-center justify-center gap-0.5 rounded-md border-2 border-black bg-[#FFE45C] text-black shadow-[2px_2px_0px_0px_#000] transition-transform active:translate-x-0.5 active:translate-y-0.5 active:shadow-none"
           >
             <ArrowUpRight className="h-4 w-4" strokeWidth={2.8} />
             <span className="text-[9px] font-black">JOIN</span>
-          </a>
+          </Link>
         </div>
       </nav>
     </>

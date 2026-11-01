@@ -1,1 +1,1 @@
-export const BRAND_NAME=`what's today?`
+export const BRAND_NAME=`what's today`
