@@ -4,6 +4,7 @@ const earlyAccessRoutes = require("./modules/earlyAccess/earlyAccess.routes.js")
 
 const app = express();
 
+app.set("trust proxy", 1); // Enable trust proxy for correct client IP detection
 const allowedOrigins = [
   "http://localhost:5173",
   "https://landing-v0-psi.vercel.app",
