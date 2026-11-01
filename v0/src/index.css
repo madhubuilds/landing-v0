@@ -25,7 +25,16 @@
     color: #020617;
     @apply antialiased;
   }
+  /* Dark Mode Body Override */
+  .dark {
+    background-color: #0f172a; /* Deep Slate/Navy instead of pure black */
+    color: #f8fafc; /* slate-50 */
+  }
 
+  .dark body {
+    background-color: #0f172a;
+    color: #f8fafc;
+  }
   #root {
     min-height: 100vh;
   }

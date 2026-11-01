@@ -8,19 +8,24 @@ import {
   Sun,
   Moon,
   PlusCircle,
+  Hexagon,
 } from "lucide-react";
 import { useAppStore } from "../../store/useAppStore";
 
+// Update navLinks array
 const navLinks = [
+  { label: "Spaces", path: "/spaces" }, // <-- Added
   { label: "Discover", path: "/discover" },
   { label: "Host", path: "/host" },
   { label: "Our Vision", path: "/vision" },
 ];
 
+// Update mobileLinks array (import Hexagon from lucide-react if you want a 3D looking icon)
+
 const mobileLinks = [
   { label: "Home", path: "/", Icon: House },
+  { label: "Spaces", path: "/spaces", Icon: Hexagon }, // <-- Added
   { label: "Discover", path: "/discover", Icon: Compass },
-  { label: "Host", path: "/host", Icon: PlusCircle },
 ];
 
 export default function Navbar() {
@@ -30,9 +35,7 @@ export default function Navbar() {
   const isDark = theme === "dark";
 
   const themeButtonClass = `flex shrink-0 items-center justify-center gap-2 rounded-md border-2 border-black p-2.5 font-extrabold shadow-[3px_3px_0px_0px_#000] transition-all duration-150 hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-[2px_2px_0px_0px_#000] active:translate-x-1 active:translate-y-1 active:shadow-none ${
-    isDark
-      ? "bg-[#FFE45C] text-black"
-      : "bg-white text-black"
+    isDark ? "bg-[#FFE45C] text-black" : "bg-white text-black"
   }`;
 
   return (
@@ -41,12 +44,12 @@ export default function Navbar() {
       <header
         className={`fixed inset-x-0 top-0 z-50 border-b-2 transition-colors duration-300 ${
           isDark
-            ? "border-white bg-[#171717]"
+            ? "border-white bg-[#0F172A]" // <-- Updated here
             : "border-black bg-[#FFFDF7]"
         }`}
       >
         <nav
-          aria-label="Main navigation"
+          aria-label="Mobile navigation"
           className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:h-20 sm:px-6 lg:px-8"
         >
           {/* Brand */}
@@ -109,9 +112,7 @@ export default function Navbar() {
               ) : (
                 <Moon className="h-4 w-4" />
               )}
-              <span className="text-xs">
-                {isDark ? "Light" : "Dark"}
-              </span>
+              <span className="text-xs">{isDark ? "Light" : "Dark"}</span>
             </button>
 
             <Link
@@ -154,9 +155,7 @@ export default function Navbar() {
       <nav
         aria-label="Mobile navigation"
         className={`fixed inset-x-0 bottom-0 z-50 border-t-2 pb-[env(safe-area-inset-bottom)] transition-colors duration-300 md:hidden ${
-          isDark
-            ? "border-white bg-[#171717]"
-            : "border-black bg-[#FFFDF7]"
+          isDark ? "border-white bg-[#171717]" : "border-black bg-[#FFFDF7]"
         }`}
       >
         <div className="mx-auto grid h-[66px] max-w-lg grid-cols-4 items-center px-2">
@@ -169,9 +168,7 @@ export default function Navbar() {
               }`}
             >
               <Icon className="h-5 w-5" strokeWidth={2.2} />
-              <span className="text-[10px] font-extrabold">
-                {label}
-              </span>
+              <span className="text-[10px] font-extrabold">{label}</span>
             </Link>
           ))}
 

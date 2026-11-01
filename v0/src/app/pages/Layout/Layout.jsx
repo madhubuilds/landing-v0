@@ -11,7 +11,7 @@ export default function Layout() {
     <div
       className={`flex min-h-screen flex-col overflow-x-clip font-sans transition-colors duration-300 ${
         isDark
-          ? "dark bg-[#171717] text-[#F5F5F5]"
+      ? "dark bg-[#0F172A] text-[#F8FAFC]" // <-- Updated here
           : "bg-[#FFFDF7] text-slate-950"
       }`}
     >
@@ -23,8 +23,8 @@ export default function Layout() {
       </main>
 
       <footer
-        className={`border-t-2 px-4 pb-24 pt-8 sm:px-6 md:pb-8 lg:px-8 mt-auto ${
-          isDark ? "border-white bg-[#171717]" : "border-black bg-[#FFFDF7]"
+      className={`border-t-2 px-4 pb-24 pt-8 sm:px-6 md:pb-8 lg:px-8 mt-auto ${
+          isDark ? "border-white bg-[#0F172A]" : "border-black bg-[#FFFDF7]" // <-- Updated here
         }`}
       >
         <div className="mx-auto flex max-w-7xl flex-col items-center gap-4 text-center sm:flex-row sm:justify-between sm:text-left">

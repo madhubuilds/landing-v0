@@ -10,6 +10,7 @@ import VisionPage from "./app/pages/Vision/VisionPage";
 import PrivacyPolicyPage from "./app/pages/privacy/PrivacyPolicy";
 import TermsPage from "./app/pages/Terms/Terms";
 import NotFoundPage from "./app/pages/NotFoundPage";
+import SpacesPage from "./app/pages/3D/SpacesPage";
 
 function App() {
   const location = useLocation();
@@ -22,6 +23,7 @@ function App() {
           <Route path="discover" element={<DiscoverPage />} />
           <Route path="host" element={<HostPage />} />
           <Route path="vision" element={<VisionPage />} />
+          <Route path="spaces" element={<SpacesPage />} />
         </Route>
 
         {/* Legal and Error pages are outside Layout if you don't want the main nav/footer on them. 
