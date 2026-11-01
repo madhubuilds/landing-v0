@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ArrowRight, CheckCircle2, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useAppStore } from "../../store/useAppStore";
 
 const API_URL = "https://whats-today-api.onrender.com/api/early-access";
+const HEALTH_URL = "https://whats-today-api.onrender.com/api/health";
 
 export default function EarlyAccess() {
   const theme = useAppStore((state) => state.theme);
@@ -12,6 +14,13 @@ export default function EarlyAccess() {
   const [city, setCity] = useState("");
   const [status, setStatus] = useState("idle");
   const [message, setMessage] = useState("");
+
+  // WAKE UP RENDER: Fire a silent ping when the component mounts
+  useEffect(() => {
+    fetch(HEALTH_URL).catch(() => {
+      // Silently ignore errors; this is just a wake-up call to defeat the 15-minute sleep
+    });
+  }, []);
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -40,15 +49,17 @@ export default function EarlyAccess() {
           ?.map((error) => error.message)
           .join(". ");
 
-        throw new Error(
-          validationMessage ||
-            result.message ||
-            "Signup failed. Please try again.",
-        );
+        // Catch common MongoDB duplicate key errors if the backend hasn't sanitized them yet
+        let errorMessage = validationMessage || result.message || "Signup failed. Please try again.";
+        if (errorMessage.includes("E11000") || errorMessage.toLowerCase().includes("duplicate")) {
+          errorMessage = "You are already on the waitlist! We'll be in touch soon.";
+        }
+
+        throw new Error(errorMessage);
       }
 
       setStatus("success");
-      setMessage(result.message);
+      setMessage(result.message || "You're on the list!");
       setEmail("");
       setCity("");
     } catch (error) {
@@ -117,8 +128,7 @@ export default function EarlyAccess() {
               isDark ? "text-slate-400" : "text-slate-600"
             }`}
           >
-            We're starting in Hyderabad. Leave your email to express interest in
-            early access.
+            Leave your email to express interest in early access.
           </p>
 
           <form onSubmit={handleSubmit} className="mt-6 space-y-3">
@@ -207,9 +217,21 @@ export default function EarlyAccess() {
               isDark ? "text-slate-400" : "text-slate-500"
             }`}
           >
-            {status === "success"
-              ? "Thanks for helping shape What's Today?!"
-              : "Your email will be stored securely to manage early-access signups."}
+            {status === "success" ? (
+              "Thanks for helping shape What's Today?!"
+            ) : (
+              <>
+                By joining, you agree to our{" "}
+                <Link to="/privacy" className="underline hover:text-teal-500">
+                  Privacy Policy
+                </Link>{" "}
+                and{" "}
+                <Link to="/terms" className="underline hover:text-teal-500">
+                  Terms
+                </Link>
+                .
+              </>
+            )}
           </p>
         </div>
       </div>
