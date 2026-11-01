@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
 import { BRAND_NAME } from "../constance/constance";
 import Navbar from "../components/Navbar/Navbar";
 import Hero from "../components/Hero/Hero";
@@ -16,7 +18,9 @@ export default function HomePage() {
   );
 
   const isDark = theme === "dark";
-
+  useEffect(() => {
+    document.title = `${BRAND_NAME}? | Discover Hyderabad`;
+  }, []);
   return (
     <div
       className={`min-h-screen overflow-x-clip font-sans transition-colors duration-300 ${
@@ -73,12 +77,17 @@ export default function HomePage() {
             © {new Date().getFullYear()} {BRAND_NAME}. Built in Hyderabad.
           </p>
 
-          <a
-            href="mailto:hello@whatstoday.in"
-            className="text-sm font-bold transition-colors hover:text-teal-500"
-          >
-            Get in touch ↗
-          </a>
+          <div className="flex flex-wrap items-center justify-center gap-5 text-sm font-bold">
+            <Link
+              to="/privacy"
+              className="transition-colors hover:text-teal-500"
+            >
+              Privacy Policy
+            </Link>
+            <Link to="/terms" className="transition-colors hover:text-teal-500">
+              Terms
+            </Link>
+          </div>
         </div>
       </footer>
     </div>
